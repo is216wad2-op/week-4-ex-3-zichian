@@ -19,8 +19,7 @@
       
       <script>
       
-        // add code here
-         function addToList(){
+         function addListAfterClick() {
             var ul = document.getElementsByTagName("ul")[0];
             var li = document.createElement("li"); // <li></li>
             var input = document.getElementById("userinput");
@@ -34,9 +33,14 @@
                ul.appendChild(li); // add <li>Candy</li> to the ul element
                // clear the input box after adding the item
                input.value = "";
-            
             }
-        }
+            // following alternative code also works but is unsafe
+            // try entering the input <h2>abcd</h2>
+            // var input = document.getElementById("userinput");
+            // var ul = document.getElementsByTagName("ul")[0];
+            // ul.innerHTML += input.value
+         }
+
       </script>
  
    </body>
