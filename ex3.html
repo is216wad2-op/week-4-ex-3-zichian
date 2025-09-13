@@ -9,7 +9,7 @@
       
         <!-- add HTML code here -->
        <input type="text" name="item" id="input">
-         <input type="submit" value="Enter" onclick="addToList()">
+       <button type="submit" onclick="addToList()">Enter</button>
       <ul>
          <li>Notebook</li>
          <li>Jello</li>
@@ -33,6 +33,10 @@
             if (input.value.length >0){
                var textNode = document.createTextNode(input.value); // eg. Candy
                li.appendChild(textNode); // <li>Candy</li>
+
+               // or just this line below instead of the 2 lines above
+               // li.innerText = input.value;
+
                ul.appendChild(li); // add <li>Candy</li> into <ul> elem
 
                //clear the input box after adding the item
