@@ -6,10 +6,8 @@
      
       <h1>Shopping List</h1>
       <p>Get it done today</p>
-      
-        <!-- add HTML code here -->
-       <input type="text" name="item" id="input">
-       <button type="submit" onclick="addToList()">Enter</button>
+      <input id="userinput"  type="text" placeholder="enter items">
+      <button id="enter" onclick="addListAfterClick()">Enter</button>
       <ul>
          <li>Notebook</li>
          <li>Jello</li>
@@ -23,24 +21,20 @@
       
         // add code here
          function addToList(){
-            var input = document.getElementById("input");
-            console.log(input.value);
-
-
-            var ul = document.getElementsByTagName("ul")[0]; // selects the first ul block
-            var li = document.createElement("li");  // <li></li>
-            
-            if (input.value.length >0){
-               var textNode = document.createTextNode(input.value); // eg. Candy
+            var ul = document.getElementsByTagName("ul")[0];
+            var li = document.createElement("li"); // <li></li>
+            var input = document.getElementById("userinput");
+            // add new item only if the user has entered something
+            if (input.value.length > 0) {
+               var textNode = document.createTextNode(input.value); /// e.g. "Candy"
                li.appendChild(textNode); // <li>Candy</li>
-
-               // or just this line below instead of the 2 lines above
-               // li.innerText = input.value;
-
-               ul.appendChild(li); // add <li>Candy</li> into <ul> elem
-
-               //clear the input box after adding the item
-               input.value= "";
+               // li.innerText = input.value; // Not using createTextNode, 
+                                           // but directly setting the innerText
+                                           // Doesn't need appendChild step
+               ul.appendChild(li); // add <li>Candy</li> to the ul element
+               // clear the input box after adding the item
+               input.value = "";
+            
             }
         }
       </script>
